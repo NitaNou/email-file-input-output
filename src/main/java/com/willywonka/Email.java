@@ -1,3 +1,5 @@
+package com.willywonka;
+
 public class Email {
 
     private String password;

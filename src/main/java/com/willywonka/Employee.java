@@ -1,3 +1,5 @@
+package com.willywonka;
+
 import java.util.Random;
 
 public class Employee {
