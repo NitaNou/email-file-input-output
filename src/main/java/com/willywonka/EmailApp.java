@@ -3,6 +3,7 @@ package com.willywonka;
 import utilities.CSV;
 
 import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,16 +18,27 @@ public class EmailApp {
         System.out.print("Please enter your last name: ");
         String lastName = in.nextLine();
         */
-        String filePath = "/Users/benita.nou/Projects/email-database/src/main/resources/fileToRead.txt";
-        List<String[]> newEmployees = CSV.read(filePath);
-        for (String[] employee : newEmployees) {
-            System.out.println(employee[0]);
-            System.out.println("*****************");
-            System.out.println(employee[1]);
-            System.out.println("*****************");
-            System.out.println(employee[2]);
-            System.out.println("*****************");
+        String filePathToRead = "/Users/benita.nou/Projects/email-database/src/main/resources/fileToRead.txt";
+        String filePathToWrite = "/Users/benita.nou/Projects/email-database/src/main/resources/fileToWrite.txt";
+        List<String[]> prospectEmployees = CSV.readAndWrite(filePathToRead, filePathToWrite);
+        List<Employee> officialEmployees = new LinkedList<>();
+        for (String[] employee : prospectEmployees) {
+            String firstName = employee[0];
+            String lastName = employee[1];
+            String dept = employee[2];
+            officialEmployees.add(new Employee(firstName, lastName, dept));
         }
+
+        for (Employee employee : officialEmployees) {
+            System.out.println(employee.showInfo());
+        }
+
+    }
+}
+
+
+
+
 
 
 //        Employee employee1 = new Employee(firstName, lastName);
@@ -63,5 +75,4 @@ public class EmailApp {
 
 
 
-    }
-}
+

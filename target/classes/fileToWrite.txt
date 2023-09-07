@@ -1,1 +1,3 @@
-id,first,last,email,pwd
+Charlie,Bucket,Wonkavator
+Augustus,Gloop,Chocolate
+Grandpa,Joe,Fizzy-Lifting-Drink

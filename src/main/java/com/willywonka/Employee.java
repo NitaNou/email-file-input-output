@@ -10,9 +10,11 @@ public class Employee {
     private String dept;
 
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, String dept) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dept = dept;
+        setEmployeeID();
     }
 
     public String getFirstName() {
@@ -54,11 +56,13 @@ public class Employee {
         this.dept = dept;
     }
 
-
+    public String showInfo() {
+        return firstName + " " + lastName + ", Dept: " + dept;
+    }
 
     @Override
     public String toString() {
-        return "Welcome, " + firstName + " " + lastName + "!";
+        return "Welcome, " + firstName + " " + lastName + "!" + "\nYour employee ID is: " + employeeID + "\n";
     }
 }
 
