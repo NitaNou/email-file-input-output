@@ -18,8 +18,8 @@ public class EmailApp {
         System.out.print("Please enter your last name: ");
         String lastName = in.nextLine();
         */
-        String filePathToRead = "/Users/benita.nou/Projects/email-database/src/main/resources/fileToRead.txt";
-        String filePathToWrite = "/Users/benita.nou/Projects/email-database/src/main/resources/fileToWrite.txt";
+        String filePathToRead = "/Users/benita.nou/Projects/email-database/src/main/resources/prospectiveEmployees.txt";
+        String filePathToWrite = "/Users/benita.nou/Projects/email-database/src/main/resources/officialEmployees.txt";
         List<String[]> prospectEmployees = CSV.readAndWrite(filePathToRead, filePathToWrite);
         List<Employee> officialEmployees = new LinkedList<>();
         for (String[] employee : prospectEmployees) {
