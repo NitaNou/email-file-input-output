@@ -23,10 +23,11 @@ public class CSV {
         return data;
     }
 
-    // reads list of potential employees from fileToRead
+    // reads list of potential employees from prospectiveEmployees.txt
     // adds new data structure to hold list of official employees based on dept criteria --> dept != none
-    // writes list of official employees to fileToWrite
+    // writes list of official employees to officialEmployees.txt
     public static List<String[]> readAndWrite(String readFromFilePath, String writeToFilePath) {
+        //duplicate code of read because we write at the same time we read
         List<String[]> data = new LinkedList<>();
         String line = "";
         try ( BufferedReader reader = new BufferedReader(new FileReader(readFromFilePath));
